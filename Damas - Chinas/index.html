@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+   <head>
+      <link type="text/css" rel="stylesheet" href="style.css"/>
+      <script src="sketch.js"></script> 
+    </head>
+    <body>
+      <h2 class="border">DAMAS-CHINAS</h2>
+      <h2 class="wave">DAMAS-CHINAS</h2>
+      <script type="module" src="script.js"></script>
+    </body>
+        
+  <style>
+    
+   .board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600;
+    height: 600;
+   }
+
+   .cell {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    position: relative;
+   }
+
+   .white {
+    background-color: #f0d9b5;
+   }
+
+   .black {
+    background-color: #808080;
+   }
+
+ 
+
+
+    .contenedor {
+      display: flex;
+      align-items: center;
+    }
+
+    .div-a {
+      background: #007E5E;
+      width: 580px;
+      height: 580px;
+      border-color: #007E5E;
+      border-width: 15px;
+      border-style: solid;
+    }
+
+  .div-1 {
+    background: #007E5E;
+    width: 250px;
+    height: 600px;
+    margin-left: 50px;
+    border-color: gray;
+    border-width: 3px;
+    border-style: solid;
+    }
+
+  .score {
+    background: #318aac;
+    width: 150;
+    height: 5;
+    margin: 3px;
+    border-color: gray;
+    border-width: 35px;
+    border-style: solid;
+    }
+  </style>
+
+  <body>
+    <div class="contenedor">
+      <!-- Cuadro verde -->
+      <div class="div-a">
+        <!-- TABLERO -->
+        <div class="board" onclick="movePiece(event)">
+        <div class="cell white" data-row="0" data-col="0"></div>
+        <div class="cell black" data-row="0" data-col="1"></div>
+        <div class="cell white" data-row="0" data-col="2"></div>
+        <div class="cell black" data-row="0" data-col="3"></div>
+        <div class="cell white" data-row="0" data-col="4"></div>
+        <div class="cell black" data-row="0" data-col="5"></div>
+        <div class="cell white" data-row="0" data-col="6"></div>
+        <div class="cell black" data-row="0" data-col="7"></div>
+        <div class="cell black" data-row="1" data-col="0"></div>
+        <div class="cell white" data-row="1" data-col="1"></div>
+        <div class="cell black" data-row="1" data-col="2"></div>
+        <div class="cell white" data-row="1" data-col="3"></div>
+        <div class="cell black" data-row="1" data-col="4"></div>
+        <div class="cell white" data-row="1" data-col="5"></div>
+        <div class="cell black" data-row="1" data-col="6"></div>
+        <div class="cell white" data-row="1" data-col="7"></div>
+        <div class="cell white" data-row="2" data-col="0"></div>
+        <div class="cell black" data-row="2" data-col="1"></div>
+        <div class="cell white" data-row="2" data-col="2"></div>
+        <div class="cell black" data-row="2" data-col="3"></div>
+        <div class="cell white" data-row="2" data-col="4"></div>
+        <div class="cell black" data-row="2" data-col="5"></div>
+        <div class="cell white" data-row="2" data-col="6"></div>
+        <div class="cell black" data-row="2" data-col="7"></div>
+        <div class="cell black" data-row="3" data-col="0"></div>
+        <div class="cell white" data-row="3" data-col="1"></div>
+        <div class="cell black" data-row="3" data-col="2"></div>
+        <div class="cell white" data-row="3" data-col="3"></div>
+        <div class="cell black" data-row="3" data-col="4"></div>
+        <div class="cell white" data-row="3" data-col="5"></div>
+        <div class="cell black" data-row="3" data-col="6"></div>
+        <div class="cell white" data-row="3" data-col="7"></div>
+        <div class="cell white" data-row="4" data-col="0"></div>
+        <div class="cell black" data-row="4" data-col="1"></div>
+        <div class="cell white" data-row="4" data-col="2"></div>
+        <div class="cell black" data-row="4" data-col="3"></div>
+        <div class="cell white" data-row="4" data-col="4"></div>
+        <div class="cell black" data-row="4" data-col="5"></div>
+        <div class="cell white" data-row="4" data-col="6"></div>
+        <div class="cell black" data-row="4" data-col="7"></div>
+        <div class="cell black" data-row="5" data-col="0"></div>
+        <div class="cell white" data-row="5" data-col="1"></div>
+        <div class="cell black" data-row="5" data-col="2"></div>
+        <div class="cell white" data-row="5" data-col="3"></div>
+        <div class="cell black" data-row="5" data-col="4"></div>
+        <div class="cell white" data-row="5" data-col="5"></div>
+        <div class="cell black" data-row="5" data-col="6"></div>
+        <div class="cell white" data-row="5" data-col="7"></div>
+        <div class="cell white" data-row="6" data-col="0"></div>
+        <div class="cell black" data-row="6" data-col="1"></div>
+        <div class="cell white" data-row="6" data-col="2"></div>
+        <div class="cell black" data-row="6" data-col="3"></div>
+        <div class="cell white" data-row="6" data-col="4"></div>
+        <div class="cell black" data-row="6" data-col="5"></div>
+        <div class="cell white" data-row="6" data-col="6"></div>
+        <div class="cell black" data-row="6" data-col="7"></div>
+        <div class="cell black" data-row="7" data-col="0"></div>
+        <div class="cell white" data-row="7" data-col="1"></div>
+        <div class="cell black" data-row="7" data-col="2"></div>
+        <div class="cell white" data-row="7" data-col="3"></div>
+        <div class="cell black" data-row="7" data-col="4"></div>
+        <div class="cell white" data-row="7" data-col="5"></div>
+        <div class="cell black" data-row="7" data-col="6"></div>
+        <div class="cell white" data-row="7" data-col="7"></div>
+              
+        </div>
+      </div>
+    <div class="div-1">
+        <!-- Cuadro de score y botones -->
+        
+        <html lang="en">
+          <head>
+            <link type="text/css" rel="stylesheet" href="style.css"/>
+          </head>
+
+          <body>
+            <h2 class="border">Control</h2>
+            <h2 class="wave">Control</h2>
+            <script type="module" src="script.js"></script>
+          </body>
+        </html>
+    <div class="score">  
+      </div>
+        <main>
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>DAMAS CHINAS</title>
+                <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+                <link href="styles.css" rel="stylesheet">
+                <script src="script.js" defer></script>
+            
+            </head>
+            
+            <!-- CRONOMETRO -->
+            <body>
+              <main>
+                <div class="circle">
+                  <div id="stopwatch" class="stopwatch"><b>00:00</b></div>
+                    <div class="buttons">
+                      <div class="stop" onclick="stop()"></div>
+                      <div id="play-pause" class="paused" onclick="playPause()"></div>
+                    </div>
+                  </div>
+                <div id="seconds-sphere" class="seconds-sphere"></div>
+              </main>
+            </body> 
+        </main>
+      </div> 
+    </div>
+  </body>
+        
+</html>
+
+
+
+
+
+
+
+
